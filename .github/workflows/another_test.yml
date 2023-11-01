@@ -23,7 +23,7 @@ jobs:
             a = "${{github.event.inputs.test_value}}"
             if [github.event.inputs.test_value != null]
             then
-                echo "$a"
+                echo "${a}"
             else
                 echo "null"
             fi
