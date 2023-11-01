@@ -17,13 +17,21 @@ jobs:
 
     steps:
         - uses: actions/checkout@v3
+        
+        - name: Test another thing
+          run: |
+            # Assign the local variable
+            MY_VAR=my-value
     
+            # Use the local variable
+            echo "The value of MY_VAR is: $MY_VAR"
+
         - name: Test test_value
           run: |
-            a = github.event.inputs.test_value
-            if [github.event.inputs.test_value != null]
-            then
-                echo "${a}"
-            else
-                echo "null"
-            fi
+                a="${{github.event.inputs.test_value}}"
+                if [github.event.inputs.test_value != null]
+                then
+                    echo "$a"
+                else
+                    echo "null"
+                fi
