@@ -30,7 +30,7 @@ jobs:
           run: |
                 a="${{github.event.inputs.test_value}}"
                 echo $a
-                if [$a != ""]
+                if [[ $a != "" ]]
                 then
                     echo "$a"
                 else
