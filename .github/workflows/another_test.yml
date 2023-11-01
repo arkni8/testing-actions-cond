@@ -29,6 +29,7 @@ jobs:
         - name: Test test_value
           run: |
                 a="${{github.event.inputs.test_value}}"
+                echo $a
                 if [$a != ""]
                 then
                     echo "$a"
