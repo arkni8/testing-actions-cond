@@ -29,7 +29,7 @@ jobs:
         - name: Test test_value
           run: |
                 a=${{github.event.inputs.test_value}}
-                if [a != null]
+                if [$a -ne null]
                 then
                     echo "$a"
                 else
