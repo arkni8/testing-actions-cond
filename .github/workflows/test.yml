@@ -16,7 +16,6 @@ on:
 
 jobs:
   test-with-input:
-
     if: github.event.inputs.test_value != null
     runs-on: ubuntu-latest
 
@@ -30,7 +29,7 @@ jobs:
 
     - name: Create .env file for Nodejs
       run: |
-        echo "${github.event.inputs.test_value}"
+        echo "${{github.event.inputs.test_value}}"
   
   test-without-input:
     if: github.event.inputs.test_value == null
