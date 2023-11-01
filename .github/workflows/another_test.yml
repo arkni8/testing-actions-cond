@@ -1,0 +1,29 @@
+name: Testing environment
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_value:
+        type: string
+        description: Type a test number
+      
+  # Triggers the workflow every 2h 17minutes
+  # schedule:
+  #   - cron: "17 */12 * * *"
+
+jobs:
+  input-test:
+    runs-on: ubuntu-18.04
+
+    steps:
+        - uses: actions/checkout@v3
+    
+        - name: Test test_value
+          run: |
+            a = "${{github.event.inputs.test_value}}"
+            if [github.event.inputs.test_value != null]
+            then
+                echo "$a"
+            else
+                echo "null"
+            fi
