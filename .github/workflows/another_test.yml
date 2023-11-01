@@ -33,5 +33,5 @@ jobs:
                 then
                     echo "$a"
                 else
-                    echo "null"
+                    echo "nothing"
                 fi
