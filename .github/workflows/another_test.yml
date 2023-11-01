@@ -6,6 +6,7 @@ on:
       test_value:
         type: string
         description: Type a test number
+        default: "-1"
       
   # Triggers the workflow every 2h 17minutes
   # schedule:
@@ -29,7 +30,7 @@ jobs:
         - name: Test test_value
           run: |
                 a=${{github.event.inputs.test_value}}
-                if [$a -ne null]
+                if [$a -ne "-1"]
                 then
                     echo "$a"
                 else
